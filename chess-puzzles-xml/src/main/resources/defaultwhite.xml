@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util-3.0.xsd
+    ">
+    <!-- Define the WHITE constant -->
+    <util:constant id="WHITE" static-field="com.epam.rd.autotasks.chesspuzzles.ChessPiece.Type.WHITE"/>
+
+    <bean id="packageName" class="java.lang.String">
+        <constructor-arg value="com.epam.rd.autotasks.chesspuzzles"/>
+    </bean>
+
+    <!-- Define the ChessPiece beans -->
+    <bean id="getKingWhite" class="#{packageName}.King">
+        <constructor-arg index="0">
+            <bean class="#{packageName}.Cell">
+                <constructor-arg index="0" value="E"></constructor-arg>
+                <constructor-arg index="1" value="1"></constructor-arg>
+            </bean>
+        </constructor-arg>
+        <constructor-arg index="1" value="WHITE"></constructor-arg>
+    </bean>
+    <bean id="queenWhite" class="#{packageName}.Queen">
+        <constructor-arg>
+            <bean class="#{packageName}.Cell" factory-method="cell">
+                <constructor-arg value="D"/>
+                <constructor-arg value="1"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg ref="WHITE"/>
+    </bean>
+
+    <bean id="bishop1White" class="#{packageName}.Bishop">
+        <constructor-arg>
+            <bean class="#{packageName}.Cell" factory-method="cell">
+                <constructor-arg value="C"/>
+                <constructor-arg value="1"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg ref="WHITE"/>
+    </bean>
+
+    <bean id="bishop2White" class="#{packageName}.Bishop">
+        <constructor-arg>
+            <bean class="#{packageName}.Cell" factory-method="cell">
+                <constructor-arg value="F"/>
+                <constructor-arg value="1"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg ref="WHITE"/>
+    </bean>
+
+    <bean id="knight1White" class="#{packageName}.Knight">
+        <constructor-arg>
+            <bean class="#{packageName}.Cell" factory-method="cell">
+                <constructor-arg value="B"/>
+                <constructor-arg value="1"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg ref="WHITE"/>
+    </bean>
+
+    <bean id="knight2White" class="#{packageName}.Knight">
+        <constructor-arg>
+            <bean class="#{packageName}.Cell" factory-method="cell">
+                <constructor-arg value="G"/>
+                <constructor-arg value="1"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg ref="WHITE"/>
+    </bean>
+
+    <bean id="rook1White" class="#{packageName}.Rook">
+        <constructor-arg>
+            <bean class="#{packageName}.Cell" factory-method="cell">
+                <constructor-arg value="A"/>
+                <constructor-arg value="1"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg ref="WHITE"/>
+    </bean>
+
+    <bean id="rook2White" class="#{packageName}.Rook">
+        <constructor-arg>
+            <bean class="#{packageName}.Cell" factory-method="cell">
+                <constructor-arg value="H"/>
+                <constructor-arg value="1"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg ref="WHITE"/>
+    </bean>
+
+    <bean id="pawn1White" class="#{packageName}.Pawn">
+        <constructor-arg>
+            <bean class="#{packageName}.Cell" factory-method="cell">
+                <constructor-arg value="A"/>
+                <constructor-arg value="2"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg ref="WHITE"/>
+    </bean>
+
+    <bean id="pawn2White" class="#{packageName}.Pawn">
+        <constructor-arg>
+            <bean class="#{packageName}.Cell" factory-method="cell">
+                <constructor-arg value="B"/>
+                <constructor-arg value="2"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg ref="WHITE"/>
+    </bean>
+
+    <bean id="pawn3White" class="#{packageName}.Pawn">
+        <constructor-arg>
+            <bean class="#{packageName}.Cell" factory-method="cell">
+                <constructor-arg value="C"/>
+                <constructor-arg value="2"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg ref="WHITE"/>
+    </bean>
+
+    <bean id="pawn4White" class="#{packageName}.Pawn">
+        <constructor-arg>
+            <bean class="#{packageName}.Cell" factory-method="cell">
+                <constructor-arg value="D"/>
+                <constructor-arg value="2"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg ref="WHITE"/>
+    </bean>
+
+    <bean id="pawn5White" class="#{packageName}.Pawn">
+        <constructor-arg>
+            <bean class="#{packageName}.Cell" factory-method="cell">
+                <constructor-arg value="E"/>
+                <constructor-arg value="2"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg ref="WHITE"/>
+    </bean>
+
+    <bean id="pawn6White" class="#{packageName}.Pawn">
+        <constructor-arg>
+            <bean class="#{packageName}.Cell" factory-method="cell">
+                <constructor-arg value="F"/>
+                <constructor-arg value="2"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg ref="WHITE"/>
+    </bean>
+
+    <bean id="pawn7White" class="#{packageName}.Pawn">
+        <constructor-arg>
+            <bean class="#{packageName}.Cell" factory-method="cell">
+                <constructor-arg value="G"/>
+                <constructor-arg value="2"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg ref="WHITE"/>
+    </bean>
+
+    <bean id="pawn8White" class="#{packageName}.Pawn">
+        <constructor-arg>
+            <bean class="#{packageName}.Cell" factory-method="cell">
+                <constructor-arg value="H"/>
+                <constructor-arg value="2"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg ref="WHITE"/>
+    </bean>
+
+
+
+
+    <context:annotation-config/>
+</beans>
